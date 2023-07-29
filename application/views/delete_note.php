@@ -15,16 +15,16 @@
 	<?php include('include_nav.php'); ?>
 	<div class="vertical-line bg-light"></div> <!-- Add the vertical line div here -->
 	<!-- side-bar button -->
-	<div class="sidebar btn-group-vertical">
-		<button type="button" class="btn btn-light" style="margin-left: 1rem;" onclick="showCreateNoteForm()">Create Note</button>
-	</div>
+	<!-- <div class="sidebar btn-group-vertical">
+		<button type="button" class="btn btn-light" style="margin-left: 1rem;" onclick="showCreateNoteForm()"> Note</button>
+	</div> -->
 	<!-- side-bar button end -->
 	<!-- New Note form start -->
-	<div id="createNoteForm" class="container float-right bg-light rounded" style="margin-right: 1rem; display: none;">
+	<!-- <div id="createNoteForm" class="container float-right bg-light rounded" style="margin-right: 1rem; display: none;">
 		<button type="button" class="close close-button" aria-label="Close" onclick="hideCreateNoteForm()">
 			<span aria-hidden="true">&times;</span>
 		</button>
-		<form action="<?php echo base_url('index.php/Home/create_note'); ?>" method="post">
+		<form action="<?php //echo base_url('index.php/Home/create_note'); ?>" method="post">
 			<div class="form-group">
 				<label for="title">Title</label>
 				<input type="text" class="form-control" id="title" name="title" required>
@@ -36,7 +36,7 @@
 			<button type="button" class="btn btn-danger btn-sm" id="closeNoteForm" onclick="hideCreateNoteForm()">Close Without Saving</button>
 			<button type="submit" class="btn btn-success btn-sm float-right">Save Note</button>
 		</form>
-	</div>
+	</div> -->
 	<!-- New Note form end -->
 	<!-- Notes - list start -->
 	<div class="container float-right bg-light rounded" style="margin-right: 1rem;">
@@ -50,7 +50,7 @@
 		<?php foreach ($result as $note) { ?>
 			<div class="card border-dark mb-3" style="width: 65rem; margin: 1rem; ">
 				<div class="card-header bg-transparent border-dark">
-					<b>Last-Modified: </b>
+					<b>Move to Bin by: </b>
 					<label class="text-primary">
 						<?php /*echo  htmlentities ($note -> mnd_modify_date ); or*/
 						$time = new DateTime($note['mnd_modify_date']);
@@ -64,7 +64,7 @@
 				</div>
 				<div class="card-footer bg-transparent border-dark ">
 					<button type="button" class="btn btn-info btn-sm float-right" style="margin-left: 1rem;">Edit Note</button>
-					<a class="btn btn-danger btn-sm float-right" style="margin-left: 1rem;" href="<?php echo base_url('index.php/Delete_Note/delete_note/') . $note['mnd_id']; ?>">Delete Note</a>
+					<a class="btn btn-danger btn-sm float-right" style="margin-left: 1rem;" href="<?php echo base_url('index.php/Delete_Note/delete_permanently/') . $note['mnd_id']; ?>">Delete Note Parmanently</a>
 				</div>
 			</div>
 		<?php  } ?>

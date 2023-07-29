@@ -54,4 +54,4 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 
-$route['home/create_note'] = 'index.php/Home/create_note';
+// $route['home/create_note'] = 'index.php/Home/create_note';

@@ -1,0 +1,75 @@
+<?php include('include_config.php');?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notepad</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style type="text/css">
+    /* Keep your existing CSS here */
+
+    /* Add custom CSS for responsiveness if needed */
+
+    @media (max-width: 768px) { /* Apply responsive styles for screens with a maximum width of 768px (tablet and below) */
+      .login-form {
+        width: 90%; /* Reduce the width of the login form to fit smaller screens */
+        margin: 20px 40px; /* Adjust the margin to center the form */
+      }
+      .login-form h1 {
+        padding-top: 20px; /* Reduce the top padding for the heading */
+        font-size: 24px; /* Increase the font size for the heading */
+      }
+      .login-form .input-field {
+        padding: 0 15px; /* Add left and right padding to the input field container */
+      }
+      .login-form .input-field input {
+        padding: 10px 5px; /* Adjust the input field padding */
+        font-size: 14px; /* Reduce the font size for the input fields */
+      }
+      .login-form .action {
+        flex-direction: column; /* Stack the buttons vertically */
+      }
+      .login-form .action button {
+        width: 100%; /* Make the buttons take up full width */
+        margin-bottom: 10px; /* Add spacing between the buttons */
+      }
+    }
+  </style>
+  <?php include('include_metadata.php'); ?>
+</head>
+<body>
+  <!-- <?php include('include_nav.php'); ?> -->
+<!-- partial:index.partial.html -->
+<div class="login-form container">
+  <form action="" method="POST">
+    <h1 class="text-center">Login</h1>
+    <div class="content">
+      <?php if($this->session->flashdata('error')){?>
+        <p style="color:red"><?php  echo $this->session->flashdata('error');?></p>  
+      <?php } ?>
+
+      <div class="input-field">
+        <input name="username" type="username" placeholder="User Name" class="form-control" autocomplete="nope">
+      </div>
+      <div class="input-field">
+        <input name="password" type="password" placeholder="Password" class="form-control" autocomplete="new-password">
+      </div>
+      <div class="checkbox">
+        <label>
+          <input name="remember" type="checkbox"> REMEMBER ME
+        </label>
+      </div> 
+      <a href="#" class="link">Forgot Your Password?</a>
+    </div>
+    <div class="action text-center">
+      <button id="signup" type="button" class="btn btn-default" onclick="window.location.href='<?php echo base_url('index.php/register');?>'">Register</button>
+      <button id="signin" type="submit" class="btn btn-primary">Sign in</button>
+    </div>
+  </form>
+</div>
+<!-- partial -->
+<?php include('include_footer.php'); ?>
+<?php include('include_base.php');?>
+</body>
+</html>
