@@ -39,7 +39,7 @@
 					<p class="card-text"><?php echo $note['mnd_note_details']; ?></p>
 				</div>
 				<div class="card-footer bg-transparent border-dark ">
-					<button type="button" class="btn btn-info btn-sm float-right" style="margin-left: 1rem;">Restore</button>
+					<a class="btn btn-info btn-sm float-right" style="margin-left: 1rem;" href="<?php echo base_url('index.php/Delete_Note/restore_Tohome/') . $note['mnd_id']; ?>">Restore</a>
 					<a class="btn btn-danger btn-sm float-right" style="margin-left: 1rem;" href="<?php echo base_url('index.php/Delete_Note/delete_permanently/') . $note['mnd_id']; ?>">Delete Note Parmanently</a>
 				</div>
 			</div>

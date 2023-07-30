@@ -32,6 +32,15 @@ class Delete_Note extends CI_Controller
         }
     }
 
+    //functin for move note to home from recycle bin
+    public function restore_Tohome($noteid)
+    {
+        $result = $this->Note_Model->restore_note($noteid);
+        if ($result) {
+            redirect('home');
+        }
+    }
+
     //function to Delete Note Parmanently
     public function delete_permanently($noteid)
     {
