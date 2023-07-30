@@ -52,14 +52,15 @@
 				<div class="card-header bg-transparent border-dark">
 					<b>Last-Modified: </b>
 					<label class="text-primary">
-						<?php /*echo  htmlentities ($note -> mnd_modify_date ); or*/
-						$time = new DateTime($note['mnd_modify_date']);
-						$modifytime = $time->format("F j, Y, g:i a");
-						echo $modifytime; ?>
+						<?php 
+						$time = strtotime($note['mnd_modify_date']);
+						$formattedTime = date('g:i A', $time);
+						echo (custom_timespan($note['mnd_modify_date']))." - ".$formattedTime;
+						// echo custom_timespan($note['mnd_modify_date']).- $formattedTime;?>
 					</label>
 				</div>
 				<div class="card-body text-dark">
-					<h5 class="card-title"><?php echo $note['mnd_note_title']; ?></h5>
+					<h5 class=""><?php echo $note['mnd_note_title']; ?></h5>
 					<p class="card-text"><?php echo $note['mnd_note_details']; ?></p>
 				</div>
 				<div class="card-footer bg-transparent border-dark ">
