@@ -7,11 +7,11 @@
   <?php include('include_metadata.php'); ?>
 </head>
 <body>
-  <!-- <?php include('include_nav.php'); ?> -->
 <!-- partial:index.partial.html -->
 <div class="login-form">
   <form action="" method="POST">
     <h1>Login</h1>
+    <div class="logo-box"><img class="logo" src="<?php echo base_url('assets/images/notepad.png');?>"></div>
     <div class="content">
     <?php if($this->session->flashdata('error')){?>
         <p style="color:red"><?php  echo $this->session->flashdata('error');?></p>	

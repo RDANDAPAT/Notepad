@@ -22,7 +22,7 @@ class Note_Model extends CI_Model {
 	//model to show all active Notes
 	public function active_note_list($userid){
 		$data=array('mnd_mu_id'=>$userid,'mnd_status'=>1);
-		$queary=$this->db->select('*')->where($data)->get('mst_note_data');
+		$queary=$this->db->select('*')->where($data)->order_by('mnd_modify_date', 'DESC')->get('mst_note_data');
 		// $result=$this->db->get('mst_note_data')->result_array();
 		return $queary->result_array();
 	}
@@ -40,7 +40,7 @@ class Note_Model extends CI_Model {
 	//model to show all notes in bin
 	public function bin_note_list($userid){
 		$data=array('mnd_mu_id'=>$userid,'mnd_status'=>0);
-		$queary=$this->db->select('*')->where($data)->get('mst_note_data');
+		$queary=$this->db->select('*')->where($data)->order_by('mnd_modify_date', 'DESC')->get('mst_note_data');
 		// $result=$this->db->get('mst_note_data')->result_array();
 		return $queary->result_array();
 	}

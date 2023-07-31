@@ -7,13 +7,16 @@
 	<title>Notepad</title>
 	<?php include('include_metadata.php'); ?>
 	<style>
-
+		body {
+			overflow: hidden;
+		}
 	</style>
 </head>
 
 <body>
 	<?php include('include_nav.php'); ?>
-	<div class="vertical-line bg-light"></div> <!-- Add the vertical line div here -->
+	<!-- Add the vertical line div here -->
+	<div class="vertical-line bg-light"></div>
 	<!-- side-bar button -->
 	<div class="sidebar btn-group-vertical">
 		<button type="button" class="btn btn-light" style="margin-left: 1rem;" onclick="showCreateNoteForm()">Create Note</button>
@@ -39,7 +42,7 @@
 	</div>
 	<!-- New Note form end -->
 	<!-- Notes - list start -->
-	<div class="container float-right bg-light rounded" style="margin-right: 1rem;">
+	<div class="container float-right bg-light rounded " style="margin-right: 1rem; height: 85vh; overflow-y: auto;">
 
 		<!-- <?php if ($this->session->flashdata('success')) { ?>
 			<p style="color:green; margin:auto;"><?php echo $this->session->flashdata('success'); ?></p>
@@ -52,16 +55,18 @@
 				<div class="card-header bg-transparent border-dark">
 					<b>Last-Modified: </b>
 					<label class="text-primary">
-						<?php 
+						<?php
 						$time = strtotime($note['mnd_modify_date']);
 						$formattedTime = date('g:i A', $time);
-						echo (custom_timespan($note['mnd_modify_date']))." - ".$formattedTime;
-						// echo custom_timespan($note['mnd_modify_date']).- $formattedTime;?>
+						echo (custom_timespan($note['mnd_modify_date'])) . " - " . $formattedTime;
+						// echo custom_timespan($note['mnd_modify_date']).- $formattedTime;
+						?>
 					</label>
 				</div>
 				<div class="card-body text-dark">
 					<h5 class=""><?php echo $note['mnd_note_title']; ?></h5>
 					<p class="card-text"><?php echo $note['mnd_note_details']; ?></p>
+					<p>Current Time: <span id="digital-watch"></span></p>
 				</div>
 				<div class="card-footer bg-transparent border-dark ">
 					<button type="button" class="btn btn-info btn-sm float-right" style="margin-left: 1rem;">Edit Note</button>
@@ -74,6 +79,7 @@
 	<!-- partial -->
 	<?php include('include_footer.php'); ?>
 	<?php include('include_base.php'); ?>
+	<script src="<?php echo base_url('assets/javascript/watch.js') ?>" type="text/javascript"></script>
 
 	<script>
 		function showCreateNoteForm() {
@@ -83,11 +89,6 @@
 		function hideCreateNoteForm() {
 			document.getElementById("createNoteForm").style.display = "none";
 		}
-
-		// function submitCreateNoteForm() {
-		// 	// Optional: Perform any additional validation or processing before submitting the form
-		// 	document.getElementById("createNoteForm").submit();
-		// }
 	</script>
 </body>
 

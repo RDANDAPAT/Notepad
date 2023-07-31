@@ -7,7 +7,7 @@
 	<title>Notepad</title>
 	<?php include('include_metadata.php'); ?>
 	<style>
-
+		
 	</style>
 </head>
 
@@ -19,9 +19,9 @@
 		<button type="button" class="btn btn-light" style="margin-left: 1rem;" onclick="showCreateNoteForm()"> Note</button>
 	</div> -->
 	<!-- side-bar button end -->
-	<div class="container float-right bg-light rounded" style="margin-right: 1rem;">
+	<div class="container float-right bg-light rounded" style="margin-right: 1rem; height: 85vh; overflow-y: auto;">
 
-		
+
 
 		<?php foreach ($result as $note) { ?>
 			<div class="card border-dark mb-3" style="width: 65rem; margin: 1rem; ">
@@ -31,7 +31,7 @@
 						<?php /*echo  htmlentities ($note -> mnd_modify_date ); or*/
 						$time = strtotime($note['mnd_modify_date']);
 						$formattedTime = date('g:i A', $time);
-						echo (custom_timespan($note['mnd_modify_date']))." - ".$formattedTime ?>
+						echo (custom_timespan($note['mnd_modify_date'])) . " - " . $formattedTime ?>
 					</label>
 				</div>
 				<div class="card-body text-dark">
@@ -49,7 +49,7 @@
 	<!-- partial -->
 	<?php include('include_footer.php'); ?>
 	<?php include('include_base.php'); ?>
-
+	<script src="<?php echo base_url('assets/javascript/watch.js') ?>" type="text/javascript"></script>
 	<script>
 		function showCreateNoteForm() {
 			document.getElementById("createNoteForm").style.display = "block";
@@ -58,11 +58,6 @@
 		function hideCreateNoteForm() {
 			document.getElementById("createNoteForm").style.display = "none";
 		}
-
-		// function submitCreateNoteForm() {
-		// 	// Optional: Perform any additional validation or processing before submitting the form
-		// 	document.getElementById("createNoteForm").submit();
-		// }
 	</script>
 </body>
 

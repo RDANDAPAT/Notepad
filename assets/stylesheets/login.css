@@ -8,6 +8,7 @@
 body {
   background: #e35869;
   font-family: 'Rubik', sans-serif;
+  overflow: hidden;
 }
 
 .login-form {
@@ -23,15 +24,29 @@ body {
   box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
 }
 .login-form h1 {
-  padding: 35px 35px 0 35px;
+  padding: 25px 35px 0 35px;
   font-weight: 300;
 }
+.logo-box{
+  height: 5rem;
+  width: 100%;
+  position: relative;
+}
+.logo{
+  height: 5rem;
+  width: 5rem;
+  position: absolute;
+  left: 43%;
+  border: solid 2px #3c4d6d ;
+  border-radius: 50%;
+  
+}
 .login-form .content {
-  padding: 35px;
+  padding: 10px 35px 10px 35px;
   text-align: center;
 }
 .login-form .input-field {
-  padding: 12px 5px;
+  padding: 10px 5px;
 }
 .login-form .input-field input {
   font-size: 16px;
@@ -69,7 +84,7 @@ body {
   letter-spacing: 0.2px;
   text-transform: uppercase;
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .login-form .action {
   display: -webkit-box;
