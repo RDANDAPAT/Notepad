@@ -1,0 +1,44 @@
+.vertical-line {
+    height: 100%;
+    width: 4px;
+    position: absolute;
+    left: 12%;
+    transform: translateX(-50%);
+}
+
+#createNoteForm {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.close-button:hover {
+    color: #ff0000;
+}
+
+.icon-box {
+    width: 100%;
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+.icon {
+    height: 5rem;
+    width: 5rem;
+    left: 43%;
+    border: solid 2px #3c4d6d ;
+    border-radius: 50%;
+    width: 50px; /* Adjust image width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Adjust as needed */
+}
+
+note_title {
+    margin: 0; /* Remove default margin */
+}
